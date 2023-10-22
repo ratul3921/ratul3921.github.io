@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Calculator</title>
+</head>
+<body>
+<h1>Simple Calculator</h1>
+<input type="number" id="firstNumber" placeholder="Enter first number">
+<input type="number" id="secondNumber" placeholder="Enter second number">
+<select id="operator">
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+</select>
+<button type="button" id="calculateButton">Calculate</button>
+
+<script>
+const firstNumberInput = document.getElementById("firstNumber");
+const secondNumberInput = document.getElementById("secondNumber");
+const operatorSelect = document.getElementById("operator");
+const calculateButton = document.getElementById("calculateButton");
+
+calculateButton.addEventListener("click", function() {
+  const firstNumber = parseFloat(firstNumberInput.value);
+  const secondNumber = parseFloat(secondNumberInput.value);
+  const operator = operatorSelect.value;
+
+  let result;
+  switch (operator) {
+    case "+":
+      result = firstNumber + secondNumber;
+      break;
+    case "-":
+      result = firstNumber - secondNumber;
+      break;
+    case "*":
+      result = firstNumber * secondNumber;
+      break;
+    case "/":
+      result = firstNumber / secondNumber;
+      break;
+    default:
+      result = "Invalid operator";
+  }
+
+  alert(result);
+});
+</script>
+</body>
+</html>
